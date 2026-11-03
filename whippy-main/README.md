@@ -104,18 +104,6 @@ Safari no admite directamente esta carpeta de extensión Chromium; usa Opera, Ch
 
 Si editas el widget, mantén sincronizados `widget.js` y `extension/widget.js`.
 
-## Qué estaba fallando
-
-- El original no tenía `manifest.json` ni scripts de extensión: abrir el HTML no lo insertaba en otras webs.
-- La ventana Electron ocupaba todo el monitor y dependía de alternar el paso de clics mediante eventos del ratón; esa interacción depende del sistema y no era robusta.
-- No había configuración de empaquetado para generar una descarga ejecutable.
-
-Ahora hay una extensión con activación manual, una ventana compacta y una configuración para construir el portable. El arrastre ya no provoca un chasquido accidental, se gestiona la cancelación del puntero y se detienen audio/temporizadores al cerrar.
-
-## Licencia
-
-Se conserva la licencia MIT original para el código. El README original atribuía `whip.mp3` a **koiroylers**; se mantiene ese archivo y esa atribución. El original no adjuntaba una licencia específica para el audio: confirma los derechos del sonido antes de una redistribución pública o sustitúyelo por uno con licencia documentada.
-
 ## Referencias
 
 - https://developer.chrome.com/docs/extensions/develop/concepts/activeTab

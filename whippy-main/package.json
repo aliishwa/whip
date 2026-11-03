@@ -1,0 +1,53 @@
+{
+  "name": "whippy",
+  "version": "1.1.0",
+  "description": "Látigo flotante para el escritorio",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win portable",
+    "dist:mac": "electron-builder --mac dmg",
+    "dist:mac:intel": "electron-builder --mac dmg --x64",
+    "dist:mac:apple": "electron-builder --mac dmg --arm64"
+  },
+  "devDependencies": {
+    "electron": "45.2.1",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.whippy.desktop",
+    "productName": "Whippy",
+    "files": [
+      "index.html",
+      "styles.css",
+      "widget.js",
+      "renderer.js",
+      "main.js",
+      "preload.js",
+      "whip.mp3",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "Whippy-${version}-Windows.${ext}"
+    },
+    "mac": {
+      "category": "public.app-category.entertainment",
+      "target": [
+        "dmg"
+      ],
+      "identity": "-",
+      "notarize": false,
+      "artifactName": "Whippy-${version}-macOS-${arch}.${ext}",
+      "hardenedRuntime": false
+    }
+  },
+  "license": "MIT"
+}

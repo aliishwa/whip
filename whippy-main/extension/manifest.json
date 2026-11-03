@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Whippy · Látigo flotante",
+  "version": "1.1.0",
+  "description": "Activa un látigo con animación y sonido sobre la página actual. Arrastra para moverlo.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Mostrar u ocultar Whippy en esta página"
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+W"
+      },
+      "description": "Mostrar u ocultar Whippy"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "whip.mp3"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ]
+}
